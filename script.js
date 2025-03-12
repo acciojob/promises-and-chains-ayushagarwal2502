@@ -4,7 +4,7 @@ function submitForm(event){
     let Age=document.getElementById("age").value;
 
     if (Name == "" || Age == "") {
-        alert("Please enter valid details.")
+        alert("Please enter valid details")
         return;
     }
 
