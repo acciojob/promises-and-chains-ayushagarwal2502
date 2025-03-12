@@ -13,7 +13,7 @@ function submitForm(event){
             if (Age > 18) {
                 resolve(`Welcome, ${Name}. You can vote.`);
             } else {
-                reject(`Oh sorry ${Name}. you aren't old enough.`);
+                reject(`Oh sorry ${Name}. You aren\'t old enough.`);
             }
         }, 4000);
     });
