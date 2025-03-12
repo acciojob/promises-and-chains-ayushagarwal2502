@@ -1,26 +1,26 @@
-//your JS code here. If required.
+function submitForm(event){
+    event.preventDefault();
+    let Name=document.getElementById("name").value;
+    let Age=document.getElementById("age").value;
 
-function submitForm(){
-	let Name=document.getElementById("name").value;
-	let Age=document.getElementById("age").value;
-	console.log(Name)
-	     if (Name == "" ||Age=="" ) {
-    alert("Please enter valid details.")
-  }
-	const promise = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    if (Age>18) {
-      resolve("Welcome, . You can vote.");
-    } else {
-      reject("Oh sorry . You aren't old enough.");
+    if (Name == "" || Age == "") {
+        alert("Please enter valid details.")
+        return;
     }
-  }, 4000);
-});
 
-promise.then(result => {
-   alert(result);
-}).catch(error => {
-    alert(err);
-});
+    const promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (Age > 18) {
+                resolve(`Welcome, ${Name}. You can vote.`);
+            } else {
+                reject(`Oh sorry ${Name}, you aren't old enough.`);
+            }
+        }, 4000);
+    });
 
+    promise.then(result => {
+        alert(result);
+    }).catch(error => {
+        alert(error);
+    });
 }
